@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Card, CardContent, CardTitle } from "../components/ui/card";
 
 import aa11 from "../assets/aa 1 1.png";
@@ -544,96 +544,96 @@ export const TemplateExample = () => {
           </div>
         </div>
 
-
-        <div className="relative top-[31px] left-[-205px] w-[1463px] h-[732px] overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full">
-            {/* Background sphere */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[532px] h-[532px] pointer-events-none z-0">
-              <img
-                src={sphere}
-                alt="Sphere"
-                className="w-full h-full blur-[70px] opacity-60"
-              />
-            </div>
-
-            {/* Cards Container */}
-            <div className="relative w-full h-full">
-              {templates.map((template, index) => {
-                const position = getCardPosition(index);
-                return (
-                  <div
-                    key={template.id}
-                    className={`absolute transition-all duration-500 ease-in-out ${position.blur ? 'blur-[7px]' : ''}`}
-                    style={{
-                      left: position.left,
-                      top: position.top,
-                      width: position.width,
-                      height: position.height,
-                      zIndex: position.zIndex,
-                      opacity: position.opacity
-                    }}
-                  >
-                    <Card className="w-full h-full rounded-3xl border-none overflow-hidden relative">
-                      <img
-                        className="absolute w-full h-full top-0 left-0 rounded-3xl object-cover"
-                        alt="Background"
-                        src={template.bgImage}
-                      />
-                      <div className="absolute inset-0 bg-black/30 z-10 rounded-3xl" />                    
-
-                      <CardContent className="flex flex-col items-center justify-center p-0 z-20 w-full h-full">
-                        <img
-                          className="absolute top-15 left-0 w-[73px] h-[52px]"
-                          src={unionIcon}
-                          alt="Union Background"
-                        />
-                        <img
-                          className="absolute w-[60px] h-[60px] left-[17px] top-[55px]"
-                          src={button}
-                          alt="Button"
-                        />
-                      
-                        <CardTitle className="text-white text-4xl font-bold">
-                          {template.title}
-                        </CardTitle>
-                        <p className="text-white text-4xl font-bold">
-                          {template.subtitle}
-                        </p>
-                        <p className="text-sm text-gray-400 mt-5">
-                          Use pre-made templates to jumpstart creativity.
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Navigation arrows */}
-            <button
-              onClick={handlePrevious}
-              className="absolute text-white top-[316px] left-[438px] cursor-pointer z-20"
-            >
-
-              <svg className="w-6 h-6 text-white-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 1 1.3 6.326a.91.91 0 0 0 0 1.348L7 13" />
-              </svg>
-
-            </button>
-
-            <button
-              onClick={handleNext}
-              className="absolute text-white top-[321px] left-[1221px]  cursor-pointer z-20"
-            >
-
-              <svg className="cursor-pointer w-6 h-6 text-white-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1" />
-              </svg>
-            </button>
-          </div>
+     <div className="relative top-[31px] left-[-205px] w-[1463px] h-[732px] overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full">
+        {/* Background sphere */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[532px] h-[532px] pointer-events-none z-0">
+          <img
+            src={sphere}
+            alt="Sphere"
+            className="w-full h-full blur-[70px] opacity-60"
+          />
         </div>
 
+        {/* Cards Container */}
+        <div className="relative w-full h-full">
+          {templates.map((template, index) => {
+            const position = getCardPosition(index);
+            return (
+              <div
+                key={template.id}
+                className={`absolute transition-all duration-500 ease-in-out ${position.blur ? 'blur-[7px]' : ''}`}
+                style={{
+                  left: position.left,
+                  top: position.top,
+                  width: position.width,
+                  height: position.height,
+                  zIndex: position.zIndex,
+                  opacity: position.opacity
+                }}
+              >
+                <div className="w-full h-full rounded-3xl border-none overflow-hidden relative">
+                  <img
+                    className="absolute w-full h-full top-0 left-0 rounded-3xl object-cover"
+                    alt="Background"
+                    src={template.bgImage}
+                  />
+                  <div className="absolute inset-0 bg-black/30 z-10 rounded-3xl" />
 
+                  {/* Content Container */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center z-20 p-4">
+                    {/* Decorative elements */}
+                    <img
+                      className="absolute top-[60px] left-0 w-[73px] h-[52px] z-30"
+                      src={unionIcon}
+                      alt=""
+                    />
+                    <img
+                      className="absolute w-[60px] h-[60px] left-[17px] top-[55px] z-30"
+                      src={button}
+                      alt=""
+                    />
+
+                    {/* Text content */}
+                    <div className="relative z-40 text-center space-y-2">
+                      <h2 className="text-white text-4xl font-bold">
+                        {template.title || "Template Title"}
+                      </h2>
+                      <p className="text-white text-4xl font-bold">
+                        {template.subtitle || "Template Subtitle"}
+                      </p>
+                      <p className="text-sm text-gray-300 mt-4">
+                        Use pre-made templates to jumpstart creativity.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Navigation arrows */}
+        <button
+          onClick={handlePrevious}
+          className="absolute text-white top-[316px] left-[438px] cursor-pointer z-20"
+        >
+          <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 1 1.3 6.326a.91.91 0 0 0 0 1.348L7 13" />
+          </svg>
+        </button>
+
+        <button
+          onClick={handleNext}
+          className="absolute text-white top-[321px] left-[1221px] cursor-pointer z-20"
+        >
+          <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1" />
+          </svg>
+        </button>
+      </div>
+    </div>
+        
       </main>
       {/* Footer */}
       <footer className={`w-full ${isDark ? 'bg-[#1A1D3B]' : 'bg-gray-100'} py-4 px-6 mt-10 text-center text-sm ${isDark ? 'text-[#ac9fe4]' : 'text-gray-700'}`}>
